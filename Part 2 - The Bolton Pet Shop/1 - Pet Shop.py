@@ -61,6 +61,7 @@ class BoltonPetShop(QMainWindow):
         central_layout.addSpacing(30)
         central_layout.addWidget(tab_widget)
 
+
 if __name__ == '__main__':
     app = QApplication()
     app.setStyle('Fusion')   # Fusion, Windows, Macintosh
