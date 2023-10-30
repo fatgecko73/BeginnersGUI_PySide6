@@ -32,7 +32,7 @@ class BoltonPetShop(QMainWindow):
 
         # Step 1 - Setup
 
-        #  set parameters for the QMainWindow
+        #  set parameters for the QMainWindow widget
         self.setWindowTitle("Pet Shop")
 
         # This time we will use a QTabWidget for as the CentralWidget for the QMainWindow
