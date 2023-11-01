@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import (QWidget, QLabel, QComboBox, QCheckBox, QSlider, QGroupBox, QVBoxLayout, QPushButton,
-                               QSizePolicy, QHBoxLayout)
+                               QSizePolicy, QHBoxLayout, QMessageBox)
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QPixmap
 
@@ -86,6 +86,11 @@ class BuyAPet(QWidget):
         total_price += self.quantity_slider.value() * 10
 
         self.price_label.setText(f"Total Price: ${total_price}")
+
+        msg = QMessageBox()
+        msg.setWindowTitle('Price Update')
+        msg.setText(f'Price updated to ${total_price}.')
+        msg.exec()
 
     def update_food_kg(self):
         self.quantity_label.setText(f'Pet Food ($10/kg): {self.quantity_slider.value()} kg')

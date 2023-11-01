@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QLabel, QMainWindow, QTabWidget, QSizePolicy)
-from tab_buy_a_pet import BuyAPet
-from tab_pet_tag import PetTag
-from tab_feedback import FeedbackTab
+from tab_1_buy_a_pet import BuyAPet
+from tab_2_pet_tag import PetTag
+from tab_3_feedback import FeedbackTab
 
 
 class ShopSign(QLabel):
@@ -23,28 +23,29 @@ class ShopSign(QLabel):
         self.setSizePolicy(QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed))
 
 
+# app = QApplication()
+# shop_sign = ShopSign()
+# shop_sign.show()
+# app.exec()
+
+
 class BoltonPetShop(QMainWindow):
 
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        # Step 1 - Setup
-
-        #  set parameters for the QMainWindow
+        # put a title on our QMainWindow
         self.setWindowTitle("Pet Shop")
 
         # This time we will use a QTabWidget for as the CentralWidget for the QMainWindow
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
-        central_layout = QVBoxLayout()
-        central_widget.setLayout(central_layout)
 
         # Create our shop sign, using all our previous customisations.  But this time we are calling our custom class
         # created above.
         pet_shop_sign = ShopSign()
-        central_layout.addWidget(pet_shop_sign)
 
-        # Step 2 - Create Tabs
+        # Create Tabs
         tab_widget = QTabWidget()
 
         tab1_widget = BuyAPet()
@@ -55,7 +56,11 @@ class BoltonPetShop(QMainWindow):
         tab_widget.addTab(tab2_widget, "Design a Pet Tag")
         tab_widget.addTab(tab3_widget, "Feedback")
 
-        central_layout.addSpacing(30)
+        # Set the layout
+        central_layout = QVBoxLayout()
+        central_widget.setLayout(central_layout)
+        central_layout.addWidget(pet_shop_sign)
+        central_layout.addSpacing(20)
         central_layout.addWidget(tab_widget)
 
 
