@@ -25,9 +25,9 @@ changed_font.setBold(True)
 changed_font.setPointSize(48)
 changed_font.setFamily('Calisto MT')
 pet_shop_sign.setFont(changed_font)
-pet_shop_sign.setStyleSheet("border: 2px solid #333333;"
-                            "color: #773377;"
-                            "background-color: #B2EBF2;"
+pet_shop_sign.setStyleSheet("border: 2px solid #ffe170;"
+                            "color: #ffe170;"
+                            "background-color: #485d78;"
                             "padding: 20px;")
 pet_shop_sign.adjustSize()
 
