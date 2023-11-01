@@ -1,7 +1,4 @@
-from PySide6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QLabel, QComboBox, QCheckBox, QPushButton,
-                               QLineEdit, QRadioButton, QSlider, QProgressBar, QMessageBox, QMainWindow, QGroupBox,
-                               QTabWidget, QSizePolicy, QGraphicsDropShadowEffect)
-from PySide6.QtCore import Qt
+from PySide6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QLabel, QMainWindow, QTabWidget, QSizePolicy)
 from tab_buy_a_pet import BuyAPet
 from tab_pet_tag import PetTag
 from tab_feedback import FeedbackTab
@@ -9,8 +6,8 @@ from tab_feedback import FeedbackTab
 
 class ShopSign(QLabel):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        super().__init__(parent)
 
         self.setText('Bolton Pet Shop')
         changed_font = self.font()
